@@ -126,7 +126,7 @@ class BrnAppBar extends PreferredSize {
   final ShapeBorder? shape;
   final IconThemeData? iconTheme;
   final IconThemeData? actionsIconTheme;
-  final TextTheme? textTheme;
+  final TextStyle? toolbarTextStyle;
   final bool primary;
   final bool excludeHeaderSemantics;
   final double? titleSpacing;
@@ -166,7 +166,7 @@ class BrnAppBar extends PreferredSize {
       this.actionsIconTheme,
       this.excludeHeaderSemantics = false,
       this.primary = true,
-      this.textTheme,
+      this.toolbarTextStyle,
       this.titleSpacing})
       : assert(
             actions == null || actions is Widget || (actions is List<Widget>)),
@@ -191,7 +191,7 @@ class BrnAppBar extends PreferredSize {
       this.actionsIconTheme,
       this.excludeHeaderSemantics = false,
       this.primary = true,
-      this.textTheme,
+      this.toolbarTextStyle,
       this.titleSpacing})
       : this.actions = null,
         this.elevation = 0,
@@ -294,7 +294,6 @@ class BrnAppBar extends PreferredSize {
       backgroundColor: _defaultConfig.backgroundColor,
       actions: _wrapActions(_defaultConfig),
       bottom: _buildBarBottom(_defaultConfig),
-      brightness: brightness ?? Brightness.light,
       toolbarOpacity: toolbarOpacity,
       bottomOpacity: bottomOpacity,
       flexibleSpace: flexibleSpace,
@@ -302,7 +301,7 @@ class BrnAppBar extends PreferredSize {
       shape: shape,
       iconTheme: iconTheme,
       actionsIconTheme: actionsIconTheme,
-      textTheme: textTheme,
+      toolbarTextStyle: toolbarTextStyle,
       primary: primary,
       excludeHeaderSemantics: excludeHeaderSemantics,
     );
